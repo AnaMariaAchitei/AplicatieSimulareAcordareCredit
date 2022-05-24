@@ -1,0 +1,30 @@
+{% extends 'content_base.html.twig' %}
+
+{% block title %} Rezultate din simulare {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <br>
+        <br>
+        <div id="table-wrapper">
+            <div id="table-scroll">
+                <table class="table" >
+                    <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Metoda mediei maximului - MOM</th>
+                        <th scope="col">Metoda segmentelor orizontale - HDM</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th scope="col">{{ media_maximului }}</th>
+                            <th scope="col">{{ rezultat_hdm }}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

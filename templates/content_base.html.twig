@@ -1,0 +1,29 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+<nav class="navbar navbar-light bg-light" style="height: 110px;">
+    <a class="navbar-brand" href="{{ path('app_homepage') }}">
+        <img src="{{ asset('images/img.png') }}" style="height: 100px">
+    </a>
+    <div>
+        <ul>
+            <li>
+                <a  href="{{ path('app_homepage') }}" style="color: #444; text-decoration: underline; font-size: 23px">Homepage</a>
+            </li>
+            <li>
+                <a  href="{{ path('app_simulare_credit') }}" style="color: #444; text-decoration: underline; font-size: 23px">Simulare acordare credit</a>
+            </li>
+        </ul>
+    </div>
+    <br>
+</nav>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

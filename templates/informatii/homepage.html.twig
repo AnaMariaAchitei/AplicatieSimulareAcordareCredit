@@ -1,0 +1,121 @@
+{% extends 'content_base.html.twig' %}
+
+{% block title %} Acordare Credit {% endblock %}
+
+{% block body %}
+    <br>
+    <div class="jumbotron-img jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Modalitatea de acordare a creditului</h1>
+            <p class="lead">Banca pentru a acorda un credit unei persoane fizice, trebuie sa determine
+               <b><i>riscul de creditare (RC)</i></b> in functie de doua variabile:
+                <ul>
+                    <li><i>salariul anual (SA) in mii de u.m.</i></li>
+                    <li><i>venitul anual (VA) in mii de u.m.</i></li>
+                </ul>
+                obtinute din exploatarea bunurilor imobiliare detinute, dividende etc, urmand ca decizia sa fie luata dupa determinarea acestuia.</p>
+        </div>
+    </div>
+    <div class="container text-center">
+        <h3>Termenii utilizati in descrierea variabilelor lingvistice</h3><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="well">
+                    <p>Termenii utilizati in descrierea variabilelor lingvistice <i>salariul anual (SA)</i>
+                        si <i>venitul anual (VA)</i> sunt numere fuzzy triunghiulare si trapezoidale cu functiile de apartenenta alaturate:</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <img src="{{ asset('images/SA_VA.png') }}" class="img-responsive" style="width:100%" alt="termeni_SA si VA">
+                <p><b>Salariu anual si venitul anual</b></p>
+            </div>
+            <div class="col-sm-4">
+                <img src="{{ asset('images/grafic_SA_VA.png') }}" class="img-responsive" style="width:100%" alt="grafic-termeni SA/VA">
+                <p><b>Grafic - Termenii variabilei lingvistice - salariul anual (SA)</b></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="{{ asset('images/RC.png') }}" class="img-responsive" style="width:100%" alt="termeni RC">
+                <p><b>Riscul de creditare</b></p>
+            </div>
+            <div class="col-sm-4">
+                <div class="well">
+                    <p>Termenii utilizati in descrierea variabilelor lingvistice <i>riscul de creditare (RC)</i>
+                        sunt numere fuzzy triunghiulare si trapezoidale cu functiile de apartenenta din stanga.</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <img src="{{ asset('images/grafic_termeni_RC.png') }}" class="img-responsive" style="width:100%" alt="GRAFIC-termeni RC">
+                <p><b>Grafic - Termenii variabilei lingvistice - risc de creditare (RC)</b></p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h6>Cele 9 reguli care au <i>concluzia</i> exprimata in termenii variabilei lingvistice de iesire <b><i>riscul de creditare (RC)</i></b> sunt: </h6>
+        <br>
+        <div class="row" >
+            <div class="col-sm-7">
+                <p>
+                    Regula 1: if (SA este S) and (VA este S), then (RC este RR)
+                </p>
+                <p>
+                    Regula 2: if (SA este S) and (VA este M), then (RC este RR)
+                </p>
+                <p>
+                    Regula 3: if (SA este S) and (VA este R), then (RC este RM)
+                </p>
+                <p>
+                    Regula 4: if (SA este M) and (VA este S), then (RC este RR)
+                </p>
+                <p>
+                    Regula 5: if (SA este M) and (VA este M), then (RC este RM)
+                </p>
+                <p>
+                    Regula 6: if (SA este M) and (VA este R), then (RC este RS)
+                </p>
+                <p>
+                    Regula 7: if (SA este R) and (VA este S), then (RC este RM)
+                </p>
+                <p>
+                    Regula 8: if (SA este R) and (VA este M), then (RC este RS)
+                </p>
+                <p>
+                    Regula 9: if (SA este R) and (VA este R), then (RC este RS)
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <p> Unde :
+                    <ul>
+                        <li>SA -  salariul anual</li>
+                        <li>VA - venitul anual</li>
+                        <li>RC - risc de creditare</li>
+                        <li>S - scazut</li>
+                        <li>M - mediu</li>
+                        <li>R - ridicat</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+{#            <div class="col-sm-8">#}
+{#                <img src="{{ asset('images/reguli_min.png') }}" class="img-responsive" style="width:100%" alt="REGULI_min">#}
+{#                <p><b> Cele 9 reguli poti fi exprimate si sub forma aceasta.</b></p>#}
+{#            </div>#}
+            <p> Astfel prin evaluarea regulilor se introduc valorile de intrare in model, x= x0, y = y0 si se determina valoarea corespunzatoare de iesire z.</p>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <p>
+                In cadrul acestei aplicatii, am calculat riscul de creditare prin doua metode, si anume <b><i>Metoda mediei maximului (Mean of Maximum - MOM)</i></b>, dar si
+                <b><i>Media segmentelor orizontale (Height Defuzzification Method -HDM).</i></b>
+            </p>
+            <p>
+                Reamintim ca <i>riscul de creditare (RC)</i> este apreciat pe o scara de la 0 ... 20, cu valoarea maxima 20, iar decizia finala de adoptare a nivelului de risc revine
+                consultantilor din banca, dar, de asemenea, depinde si de politicile bancare existente.
+            </p>
+        </div>
+    </div>
+    <br>
+{% endblock %}

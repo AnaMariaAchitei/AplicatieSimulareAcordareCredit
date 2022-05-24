@@ -1,0 +1,27 @@
+{% extends 'content_base.html.twig' %}
+
+{% block title %} Simulare acordare credit {% endblock %}
+
+{% block body %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2> Simuleaza acordarea unui credit </h2>
+        </div>
+        <div class="çol-sm-3">
+            {{ form_start(simulareForm) }}
+            {{ form_row(simulareForm.salariu,{
+                label: 'Salariul anual:  '
+            }) }}
+            {{ form_row(simulareForm.venit, {
+                label: 'Venitul anual:  '
+            }) }}
+            <br>
+            <button type="submit" class="btn-simulare"> Calculeaza riscul de creditare! </button>
+            {{ form_end(simulareForm) }}
+
+        </div>
+    </div>
+</div>
+{% endblock %}
